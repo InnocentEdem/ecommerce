@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 5vw;
+    
+
+}
+
+.banner{
+    top: 0px; 
+    width: 100%;
+    position: fixed;
+    white-space: nowrap;
+    background-color: rgba(0, 43, 92, 1);
+}
+.logo{
+    width:30px;
+}
+.upper-header{
+    top: 0px;
+    width: 100%;
+    color: azure;
+   
+    height: auto;
+    min-height: 40px;
+    text-align: center;
+}
+
+.header-text{
+    padding: 12px;
+    font-size: 20px;
+}
+
+.lower-header{
+    padding: 10px;
+    height: 60px;
+    white-space: nowrap;
+}
+.fa{
+    color: rgba(0, 43, 92, 1);
+    
+}
+.fa-close{ 
+    display: none;
+}
+i{
+font-size: 36px;
+}
+
+.quantity{
+    font-style: normal;
+}
+
+.lower-header>i{
+    margin: 10px;
+    text-align: center;
+    padding-bottom: 4px;
+    display: inline-block;
+}
+.responsive-menu-open,.responsive-menu-close{
+    display: inline-block;
+    
+}
+#hamclose{
+    display: none;
+}
+.drop-menu{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    height: max-content;
+    background-color: white;
+    overflow: scroll;
+    display: none;
+    z-index: 1000;
+}
+.drop-menu>div{
+    top: 300px;
+    padding-left: 5vw;
+    margin: 5vw;
+    color: rgba(0, 43, 92, 1);
+}
+.lowerbody{
+    margin-top: 50px;
+}
+.directory{
+    text-align: center;
+    padding: 10px;
+    font-size: 3vw;
+}
+.product-name{
+    text-align: center;
+    font-size: 5vw;
+    font-weight: bold;
+    padding: 10px;
+}
+.reviews{
+    text-align: center;
+    padding: 10px;
+}
+.imageOwnDiv>img{
+    width: 100%;
+    
+      
+}
+.product-picture{
+    position: relative;
+}  
+
+.shift{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 100%;
+    white-space: nowrap;
+}
+.shift>i{
+    display: inline-block;
+}
+.shift>#right{
+    margin-left: 90%;
+    
+}
+.shift>#left{
+    margin-left: 3.0vw;
+}
+
+.imageOwnDiv>img{
+    display: none;
+   
+}
+.price{
+    margin: 20px;
+    text-align: center;
+    width: 100%;
+}
+.colors{
+    text-align: center;
+}
+.color-name{
+    text-align: center;
+    padding: 3vw;
+}
+.colors>div{
+    height: 12vw;
+    width: 12vw;
+    display: inline-block;
+    margin: 3vw;
+    border-radius: 50%;
+}
+#color1{
+background-color: #8a9591;
+}
+#color2{
+background-color: #485b7c;
+}
+.ask-for-size{
+    text-align: center;
+    padding-top: 8vw;
+}
+.size-box{
+    white-space: nowrap;
+    text-align: center;
+}
+.size-box>div{
+display: inline-block;
+padding:3vw;
+background-color:rgba(0, 0, 0, 0.1);
+width: 4vw;
+text-align: center;
+font-size: 3vw;
+margin: 2vw;
+justify-self: center;
+text-align: center;
+}
+.availability{
+    color: rgba(3, 36, 3, 0.795);
+    text-align: center;
+}
+.quantity{
+    text-align: center;
+    margin: 4vw;
+}
+
+.display-quantity{
+   border: solid 1px rgba(0, 43, 92, 1);
+   padding: 1vw 2vw;
+}
+
+.quantity>div{
+display: inline;
+height: 12vw;
+width: 15vw;
+padding: 1vw 3vw;
+}
+
+
+i>img:hover{
+    border: 1px solid white;
+}
+.social-icons{
+    text-align: center;
+    margin: 4vw;
+}
+.follow{
+    text-align: center;
+    margin: 2vw;
+    font-size: 4vw;
+}
+.add-to-bag{
+    
+    color: white;
+    font-size: 5vw;
+    text-align: center;
+    padding: 1vw;
+}
+.add-to-bag>div{
+    background-color: rgba(0, 43, 92, 1);
+    border: solid 1px rgba(0, 43, 92, 1);
+    width: 70%;
+    margin-left: 15%;
+    margin-right:15%;
+    padding: 3vw 0vw;
+    
+}
+.buy-online{
+    text-align: center;
+    font-size: 1vw;
+    text-align: center;
+    padding: 1vw;
+    margin-top: 1vw;
+}
+.buy-online>div{
+    width: 70%;
+    margin-left:15%;
+    margin-right: 15%;
+    padding: 3vw 0vw;
+    border: solid 1px rgba(0, 43, 92, 1);
+    font-size: 3.5vw;
+}
+.delivery-info{
+    text-align: center;
+    margin: 5vw;
+}
+.second-line>i>img{
+    width: 20vw;
+    height: auto;
+    margin-top: 1vw;
+}
+.amazon{
+    margin: 4vw;
+}
+.first-line{
+    margin: 1vw;
+    margin-bottom: 1vw;
+}
+.first-line.fa{
+    margin: 3vw;
+}
+.black{
+    padding: 3vw;
+    padding-right: 0%;
+    font-size: 3vw;
+}
+.blue{
+    padding:3vw;
+    padding-left: 0px;
+    margin-left: 0%;
+    font-size: 3vw;
+    color: royalblue;
+   
+}
+.more-info{
+    margin: 0%;
+    background-color: rgba(128, 128, 128, 0.05);
+    
+}
+.more-info>div{
+padding: 3vw;
+border-bottom: solid 1px rgba(128, 128, 128, 0.2) ;
+font-size: 5vw;
+}
+.fabric{
+    border-top: solid 1px rgba(128, 128, 128, 0.2);
+}
+.fa-plus{
+    float: right;
+font-size: 5vw;}
+h3{
+    display: inline-block;
+    margin-left: 3vw;
+}
+.social-icons>i{
+    width: 5vw;
+    height:5vw ;
+    color: white;
+    background-color:rgba(0, 43, 92, 1) ;
+    border: solid 1px gray;
+    border-radius: 50%;
+    padding: 5px;
+    white-space: nowrap;
+    margin: 1.2vw;
+}
