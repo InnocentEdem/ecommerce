@@ -113,7 +113,7 @@ const changePicture=(shiftWhere)=>{                //image changer function usin
         if(movementTracker<0){movementTracker=numberOfPictures-1;}
         else if (movementTracker>=numberOfPictures){ movementTracker=0;}
      }
-    Array.from(pictureList).forEach((picture) => {    //object must be serialized first painful discovery
+    Array.from(pictureList).forEach((picture) => {    //object must be serialized first! painful discovery!
         console.log(picture);
         console.log(movementTracker);
         picture.style.display = "none";
