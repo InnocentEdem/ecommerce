@@ -119,7 +119,7 @@ font-size: 36px;
     display: inline-block;
 }
 .shift>#right{
-    margin-left: 90%;
+    margin-left: 88%;
     
 }
 .shift>#left{
@@ -129,6 +129,9 @@ font-size: 36px;
 .imageOwnDiv>img{
     display: none;
    
+}
+.imageOwnDiv{
+    height: 120vw;
 }
 .price{
     margin: 20px;
@@ -180,20 +183,22 @@ text-align: center;
 }
 .quantity{
     text-align: center;
-    margin: 4vw;
+    margin: 5vw;
 }
 
-.display-quantity{
-   border: solid 1px rgba(0, 43, 92, 1);
-   padding: 1vw 2vw;
-}
+
 
 .quantity>div{
-display: inline;
+display: inline ;
 height: 12vw;
 width: 15vw;
 padding: 1vw 3vw;
 }
+.display-quantity{
+    border: solid 1px rgba(0, 43, 92, 1);
+    padding: 1vw 2vw;
+    display: inline-block;
+ }
 
 
 i>img:hover{
@@ -214,6 +219,7 @@ i>img:hover{
     font-size: 5vw;
     text-align: center;
     padding: 1vw;
+    margin-top:2vw ;
 }
 .add-to-bag>div{
     background-color: rgba(0, 43, 92, 1);
