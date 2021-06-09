@@ -6,6 +6,9 @@
     
 
 }
+body{
+    position: relative;
+}
 
 .banner{
     top: 0px; 
@@ -228,6 +231,7 @@ i>img:hover{
     margin-left: 15%;
     margin-right:15%;
     padding: 3vw 0vw;
+    cursor: pointer;
     
 }
 .buy-online{

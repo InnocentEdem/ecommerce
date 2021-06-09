@@ -28,7 +28,7 @@
             </div>     
         <i class="fa fa-search"></i>
         <i class="fa-light fa-user-large"></i>
-        <i class="fa fa-shopping-bag"><span class="quantity">(0)</span></i>
+        <i class="fa fa-shopping-bag"><span id="quantity-top" class="quantity-top">(0)</span></i>
     </div>
     <div id="drop-menu" class="drop-menu">
         <div><span>New &nbsp;</span><i class="fa fa-angle-right"></i></div>
@@ -79,29 +79,29 @@
                 Select Size
             </div>
             <div class="size-box">
-                <div class="XS">XS</div>
-                <div class="S">S</div>
-                <div class="M">M</div>
-                <div class="L">L</div>
-                <div class="XL">XL</div>
-                <div class="XXL">XXL</div>
+                <div class="size">XS</div>
+                <div class="size">S</div>
+                <div class="size">M</div>
+                <div class="size">L</div>
+                <div class="size">XL</div>
+                <div class="size">XXL</div>
             </div>
             <div class="availability">
                 Available in Stock
             </div>
             <div class="quantity">
-                <div class="remove">
-                    <i class="fa fa-minus-circle"></i> 
+                <div id ="remove" class="remove">
+                    <i id="minus" class="fa fa-minus-circle"></i> 
                 </div>
-                <div class="display-quantity">
+                <div id="display-quantity" class="display-quantity">
                     1
                 </div>
-                <div class="add">
-                    <i class="fa fa-plus-circle"></i>
+                <div id="add" class="add">
+                    <i id="plus" class="fa fa-plus-circle"></i>
                 </div>
 
             </div>
-            <div class="add-to-bag">
+            <div id="add-to-bag" class="add-to-bag">
                 <div>ADD TO BAG</div>
             </div>
             <div class="buy-online">
@@ -145,6 +145,6 @@
 
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
