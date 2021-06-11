@@ -1,0 +1,338 @@
+html { font-size: 62.5%; } /* =10px */
+body { font-size: 1.4rem; 
+    position: relative;
+} /* =14px */
+h1 { font-size: 2.4rem; } /* =24px */
+*{
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    overflow-x: hidden;
+}
+.cartpopup{
+position:absolute;
+top: 0;
+right: 0;
+display: none;
+}
+
+.banner{
+    top: 0px; 
+    width: 100%;
+    position: fixed;
+    white-space: nowrap;
+    background-color: rgba(0, 43, 92, 1);
+    z-index: 1000vw;
+}
+.upper-header{
+    top: 0px;
+    width: 100%;
+    color: azure;
+   
+    height: auto;
+    min-height: 40px;
+    text-align: center;
+}
+.header-text{
+    padding: 12px;
+    font-size: 20px;
+}
+
+.lower-header{
+    padding: 10px;
+    height: 60px;
+    white-space: nowrap;
+}
+
+    .lower-header{
+        display: none;
+    }
+
+
+    .drop-menu{
+        display:none;
+        position: static;
+    }
+    .menu{
+     display:block;
+     white-space: nowrap;
+     color: #002b5c;
+     margin-left: 30vw;
+    }
+
+    hr{
+        display: block;
+        color: rgba(0, 0, 0, 0.2);
+    }
+    .menu>div{
+        display: inline-block;
+        font-size: 1.2vw;
+        margin: 1.6vw 0vw;
+        
+        padding: 1.5vw 0vw;
+    }
+    .search,#search{
+        
+        border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+        font-weight: lighter;
+        padding-bottom: 0vw;
+        margin-bottom: 3vw;
+        font-size: 1.2vw;
+        margin-left: 4vw;      
+    }
+
+    #input{
+        margin-right: 0vw;
+        font-size:1vw ;
+        border: none; 
+        padding: 0vw;
+    }
+
+    .search>i{
+        margin-left: 0vw;
+        padding-left: 0vw;
+    }
+    
+
+   .image-res, .mid{
+      z-index: -1000;
+     }
+     
+     .reviews,
+     .product-name,
+     .price,
+     .choose-color,
+     .size-select,
+     .size-box,
+     .availability,
+     .quantity>div,
+     .add-to-bag,
+     .buy-online,
+     .delivery-info{
+      
+         
+      font-size: 2vw;
+     }
+
+
+.menu{
+    margin-top: 60px;
+}
+
+   .container{
+       position: relative;
+       z-index: 100;
+
+     }
+     .imageOwnDiv>img{
+       
+        width: 50rem;
+        position: absolute;
+        z-index: -100;
+       
+    }
+    .product-image{
+        display: none;
+        left:10vw;
+        top: 13vw;
+        
+
+    }
+    .size-select{
+        margin-left: 60vw;
+    }
+
+   .size{
+     display: inline-block;
+     padding:1vw;
+     background-color:rgba(0, 0, 0, 0.1);
+     width: 1vw;
+     font-size: 1vw;
+     margin-left: 0vw;
+     text-align: left;
+     }
+     .ask-for-size{
+        text-align: left;
+        padding-top: 1vw;
+    }
+    .size-box{
+        white-space: nowrap;
+        text-align: left;
+        margin-left: 50vw;
+    }
+    .availability{
+        display: none;
+        color: rgba(3, 36, 3, 0.795);
+       
+    
+  }
+
+
+    .directory{display: none;}
+    
+    #product-name{
+        text-align: left;
+        margin-left: 60vw;
+      
+    }
+
+    #reviews{
+        text-align: left;
+        margin-left: 60vw;
+    }
+    #price{
+        text-align: left;
+        margin-left: 60vw;
+    }
+    #color-name{
+        text-align: left;
+        margin-left: 60vw;
+    }
+    #colors{
+        text-align: left;
+        padding: 0px;
+        margin-left: 60vw;
+    }
+    #color1,#color2{
+        text-align: left;
+        width: 2vw;
+        height: 2vw;
+        margin: 0vw;
+        padding: 0;
+        margin-left: 60vw;
+    }
+    .choose-color{
+        text-align: left;
+        margin-left: 60vw;
+    }
+   
+    .quantity{
+        text-align: left;
+        padding:0vw;
+        text-align: center;
+        height: 5vw;
+        margin-top: 5vw;
+        margin-left: 60vw;
+    }
+    #quantity{
+        margin-left: 60vw;
+    }
+    
+ 
+    #display-quantity, #remove, #add{
+    display: inline-block ;
+    height: 2vw;
+    width: 1vw;
+    border: solid 1px rgba(0, 43, 92, 1); 
+   
+    }
+    .display-quantity{
+         border: solid 1px rgba(0, 43, 92, 1); 
+        padding: 0vw 0vw;
+     }
+     .add-to-bag{
+    
+        color: white;
+        font-size: 1vw;
+        text-align: center;
+        padding: 1vw;
+        margin-top:1vw ;
+        margin-left: 60vw;
+    }
+
+    
+    .add-to-bag>div{
+        background-color: rgba(0, 43, 92, 1);
+        border: solid 1px rgba(0, 43, 92, 1);
+        width: 50%;
+        margin-left: 5%;
+        margin-right:5%;
+        padding: 1vw 0vw;
+        cursor: pointer;
+      
+        
+    }
+    .buy-online>div{
+        width: 50%;
+        margin-left:5%;
+        margin-right: 5%;
+        padding: 3vw 0vw;
+        border: solid 1px rgba(0, 43, 92, 1);
+        font-size: 1vw;
+    }
+    .delivery-info{
+        text-align: center;
+        margin: 1vw;
+        font-size: 1vw;
+        margin-left: 60vw;
+    }
+    .buy-online{
+        margin-left: 60vw;
+    }
+    .second-line>i>img{
+        width: 2vw;
+        height: auto;
+        margin-top: 1vw;
+    }
+    .amazon{
+        margin: 1vw;
+        margin-left: 60vw;
+    }
+    .first-line{
+        margin: 1vw;
+        margin-bottom: 1vw;
+    }
+    .first-line.fa{
+        margin: 1vw;
+    }
+    .black{
+        padding: 1vw;
+        padding-right: 0%;
+        font-size: 1vw;
+    }
+    .blue{
+        padding:1vw;
+        padding-left: 0px;
+        margin-left: 0%;
+        font-size: 1vw;
+        color: royalblue;
+       
+    }
+    .more-info{
+        margin-top: 100vh;
+       
+        background-color: rgba(128, 128, 128, 0.05);
+        
+    }
+    .more-info>div{
+    padding: 1vw;
+    border-bottom: solid 1px rgba(128, 128, 128, 0.2) ;
+    font-size: 1vw;
+   
+    }
+    .fabric{
+        border-top: solid 1px rgba(128, 128, 128, 0.2);
+    }
+    .fa-plus{
+        float: right;
+    font-size: 1vw;}
+
+    h3{
+        display: inline-block;
+        margin-left: 1vw;
+    }
+
+    .social-icons>i{
+        width: 1vw;
+        height:1vw ;
+        color: white;
+        background-color:rgba(0, 43, 92, 1) ;
+        border: solid 1px gray;
+        border-radius: 50%;
+        padding: 5px;
+        white-space: nowrap;
+        margin: 1.2vw;
+    }
+    
+    .image-res{
+    }
+ 

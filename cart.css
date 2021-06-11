@@ -1,0 +1,416 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.top{
+    width: 97.2%;
+    height: 1.8rem;
+    color: white;
+    background-color: #002b5c;
+    text-align: center;
+    padding: 1rem;
+}
+.big_nav{
+    display: none;
+}
+.nav{
+    border-bottom: 1px solid #dedede;
+    height: 3rem;
+    margin: 0;
+}
+.nav ul{
+    list-style: none;
+    padding-left: 1.5rem;
+}
+.nav ul li{
+    display: inline-block;
+}
+.nav ul li:nth-child(2){
+    padding-left: 14rem;
+    padding-right: 1.5rem;
+}
+.nav ul li:nth-child(3){
+    padding-right: 1.5rem;
+}
+.hamburger_menu ul li{
+    list-style: none;
+    display: none;
+    padding-bottom: 3rem;
+    color: #002b5c;
+    font-size: 1.05rem ;
+}
+.header h1{
+    margin: 0;
+    margin-top: 1rem;
+    color: #002b5c;
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+.header .counter{
+    display: inline-block;
+    border: 1px solid #002b5c;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    color: white;
+    background-color: #002b5c;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+}
+.progress_bar{
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    color: #2d9cdb;
+    height: 1rem;
+}
+.progress_bar progress{
+    width: 90%;
+}
+.shipping{
+    margin-left: 1.5rem;
+}
+.shipping h4{
+    display: inline-block;
+    color: #e0697f;
+    margin: 0;
+    font-size: 0.9rem; 
+}
+.shipping h5{
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: #4b851d;
+}
+.shipping a{
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #2d9cdb;
+}
+.shipping i{
+    color: #4b851d;
+}
+hr{
+    width: 90%;
+    color: #dedede;
+}
+img{
+    width: 5.2rem;
+    margin-left: 1.5rem;
+    /* display: none; */
+}
+.description{
+    margin-left: 1.5rem;
+    position: absolute;
+    right: 4.5rem;
+    top: 20.3rem;
+    font-size: 0.9rem;
+}
+.description h6{
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 0;
+}
+.description h4{
+    margin: 0;
+    color: #196692;
+    font-size: 1.3rem;
+}
+.description #dropdown{
+    background-color: white;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    width: 4.5rem;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 0.2rem;
+}
+.chckbx{
+    margin-top: 1rem;
+    font-weight: bold;
+}
+.remedit{
+    position: absolute;
+    left: 7.4rem;
+    top: 35rem; 
+}
+.remedit a{
+    text-decoration: none;
+}
+.summary{
+    border: 1px solid #dedede;
+    width: 90%;
+    height: 32rem;
+    margin-left: 1.5rem;
+    position: absolute;
+    top: 40rem;
+}
+.summary .order_summary{
+    background-color: #002b5c;
+    border: 1px solid #002b5c;
+    color: #2d9cdb;
+    height: 4rem;
+}
+.summary .order_summary h3{
+    color: white;
+    padding-left: 1rem;
+    margin: 0;
+    font-size: 1.5rem;
+}
+.summary .order_summary h5{
+    color: #2d9cdb;
+    padding-left: 1rem;
+    margin: 0;
+    font-size: 1rem;
+}
+.summary .subtotal dd{
+    margin: 0 0 0 20rem;
+    padding: 0 0 0.5rem 0;
+    padding-bottom: 1.5rem;
+}
+.summary .subtotal dt{
+    float: left;
+    clear: left;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+.summary .subtotal dt::after{
+    content: " :";
+}
+.coupon{
+    margin-left: 1.5rem;
+}
+.coupon input{
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    width: 15.7rem;
+    height: 2rem;
+}
+.coupon .coup_btn{
+    border: 1px solid  #002b5c;
+    border-radius: 4px;
+    background-color: #002b5c;
+    color: white;
+    font: 1.5rem;
+    height: 2.2rem;
+    width: 4.5rem;
+}
+.checkout .checkout{
+    background-color: #d13852;
+    border: 1px solid #d13852;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    width: 90%;
+    height: 3rem;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+}
+h2{
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+.paypal .paypal{
+    background-color: #2d9cdb;
+    border: 1px solid #2d9cdb;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    width: 90%;
+    height: 3rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+.amazon .amazon{
+    background-color: #5d646b;
+    border: 1px solid #5d646b;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    width: 90%;
+    height: 3rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+.bottom_list ul li{
+    list-style: none;
+    border-bottom: 1px solid #dedede;
+    position: relative;
+    top: 45rem;
+    padding-top: 1rem;
+}
+.bottom_list ul{
+    margin-left: 0;
+}
+.icons ul li{
+    position: relative;
+    top: 45rem;
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #002b5c;
+    color: white;
+    border-radius: 50px;
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+}
+.icons ul{
+    text-align: center;
+}
+@media (min-width: 600px) {
+    .big_nav{
+        position: absolute;
+        display: inline-block;
+        right: 2rem;
+        color: #002b5c;
+
+    }
+    .big_nav ul li{
+        list-style: none;
+    }
+    .nav{
+        display: none;
+    }
+    .hamburger_menu{
+        display: none;
+    }
+    .header{
+        display: inline-block;
+        text-align: center;
+    }
+    .header h1{
+        margin: 0;
+        margin-top: 1rem;
+        color: #002b5c;
+        display: inline-block;
+        margin-left: 1.5rem;
+        text-align: center;
+    }
+    .header .counter{
+        display: inline-block;
+        border: 1px solid #002b5c;
+        border-radius: 50%;
+        margin-left: 0.5rem;
+        color: white;
+        background-color: #002b5c;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+    }
+    /* hr{
+        width: 68%;
+        float: left;
+    } */
+    .progress_bar{
+        display: inline-block;
+
+    }
+    .progress_bar progress{
+        width: 30rem;
+    }
+    img{
+        /* position: relative; */
+        
+        width: 10rem;
+        /* margin-left: 1.5rem; */
+    }
+    .remedit{
+        position: absolute;
+        left: 15rem;
+        top: 25rem; 
+    }
+    .summary{
+        width: 25rem;
+        position: absolute;
+        right: 1rem;
+        top: 15rem;
+    }
+    .coupon .coup_btn:hover{
+        cursor: pointer;
+    }
+    .checkout .checkout:hover{
+        cursor: pointer;
+    }
+    .description{
+        position: absolute;
+        display: inline-block;
+        right: 53rem;
+        top: 15rem;
+    }
+    .description h6{
+        display: inline-block;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    .description h4{
+        margin: 0;
+        color: #196692;
+        font-size: 1.7rem;
+    }
+    .description #dropdown{
+        background-color: white;
+        border: 1px solid #dedede;
+        border-radius: 5px;
+        width: 5rem;
+        height: 2.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        padding: 0.2rem;
+    }
+    .description #dropdown:hover{
+        cursor: pointer;
+    }
+    .chckbx{
+        margin-top: 1rem;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    input[type="radio"]{
+        font-size: 1rem;
+    }
+    .bottom_list ul li{
+        list-style: none;
+        border-bottom: 1px solid #dedede;
+        width: 65%;
+        position: relative;
+        top: 8rem;
+        padding-top: 1rem;
+    }
+    .bottom_list ul li:hover{
+        cursor: pointer;
+    }
+    .icons ul li{
+        position: relative;
+        top: 10rem;
+        list-style: none;
+        display: inline-block;
+        text-align: center;
+        width: 4rem;
+        height: 4rem;
+        background-color: #002b5c;
+        color: white;
+        font-size: 3rem;
+        border-radius: 50px;
+        margin: 0.5rem;
+        
+    }
+    .icons ul li:hover{
+        cursor: pointer;
+    }
+    .right{
+        position: relative;
+       left: 20rem;
+       top: -8rem;
+    }
+}
+
+
+

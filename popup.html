@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>cart</title>
+</head>
+<body>
+    <div class="cartpopup">
+        <div id="banner">
+            <h1>Item added to cart</h1>
+    
+            <button class="close_btn">
+                <i class="fa fa-close"></i>
+            </button>
+        </div>
+    
+        <div class="cart_information">
+            <div id="cart_image">
+                <img src="./image/Vanilla_Cloud_Peggy_Cosaporto.png" alt="no image">
+    
+            </div>
+            <div id="item_information">
+                <h2>Peggy_Cosaporto</h2>
+                <div class="pricealert">
+                    <p id="newprice">₵200</p>
+                    <p id="oldprice">₵500</p>
+                </div>
+                <p id="producttype">Vanilla / large</p>
+                <p id="qty">QTY:1</p>
+                <p id="px">₵200</p> 
+            </div>  
+        </div>
+        <div id="subtotal">
+            <div class="cart">
+                <p>CART SUBTOTAL:</p>
+                <p>₵200</p> 
+            </div>
+            <div>
+                <progress id="fileprogress" value="100" max="100"> 80% </progress>
+                <span>
+                    <p id="freeShippingqualify">You qualify for FREE SHIPPING</p>
+                </span>
+            </div>
+        </div>
+        <div>
+            <button id="checkout">
+                CHECKOUT
+            </button>
+        </div>
+        <div>
+            <button id="continue_shopping">CONTINUE SHOPPING  
+            </button>  
+        </div>
+    </div>   
+</body>
+</html>

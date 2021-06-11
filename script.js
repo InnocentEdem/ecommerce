@@ -28,6 +28,8 @@ const colorDescription = document.getElementById('color-name');//HTML Tag for co
 const colorBtn1 = document.getElementById('color1');    // color selector button
 const colorBtn2 = document.getElementById('color2');  //color selector button
 const bagQuantity = document.getElementById('quantity-top');
+
+
 var sizeInfo = "";
 let OnDisplayNow = "";
 let movementTracker = 0;        //display the first image in the html list
@@ -35,6 +37,8 @@ let noOfItems=0;
 
 movePixLeft.addEventListener('click',()=>{changePicture('L')}); //call on the image scroll controll function using event listeners
 movePixRight.addEventListener('click',()=>{changePicture('R')});
+
+
 
 if(OnDisplayNow===""){
 pictureList[movementTracker].style.display='block';
@@ -201,10 +205,19 @@ function orderHandler(){
     if (!localStorage.getItem("new_order")){
         const newOrderNumber= generateOrderNumber();
         const coupon= couponCodeGenerator();
+        let thisUnitPrice = +productPrice.innerText.match(/\d+/g,'')
+        let thisQuantity = +quantityTag.innerHTML;
+        console.log(quantityTag.innerHTML)
+        let thisSubTotal= +thisUnitPrice * thisQuantity;
+        let thisDiscount = thisSubTotal/2;
+        let thisUrl= document.getElementById('p-image').src
         new_order={
+            urlOfImage:thisUrl,
             order_number: newOrderNumber,
             discount_coupon: coupon,
             counter:1,
+            subTotal: +thisSubTotal ,
+            discounted: thisDiscount,
             item1:{product_name: productName.innerText,
                   product_unit_price:productPrice.innerText,
                   product_color: colorDescription.innerText,
@@ -222,12 +235,15 @@ function orderHandler(){
         let new_order = JSON.parse(jsonString);
         new_order.counter = +new_order.counter+1
         let serial='item'+ new_order.counter.toString();
-        console.log(serial);
+        thisUrl= document.getElementById('p-image').src
         new_order[serial]={product_name: productName.innerText,
                           product_unit_price:productPrice.innerText,
                           product_color: colorDescription.innerText,
+                          urlOfImage:document.getElementById('p-image').src,
                           size:sizeInfo,
                           quantity:quantityTag.innerText, }; 
+             new_order.subTotal= cartSubTotal(); 
+             new_order.discounted = cartSubTotal()/2         
             localStorage.clear();
             localStorage.setItem("new_order", JSON.stringify(new_order));        
             newQuantity = +bagQuantity.innerText + (+new_order[serial].quantity);
@@ -237,4 +253,43 @@ function orderHandler(){
     }
        
 }
+
+let cartSubTotal=()=>{
+        let jsonString=localStorage.getItem("new_order");
+        let new_order = JSON.parse(jsonString);
+        let subTotal=0;
+         quantitySoFar=new_order.counter;
+        let objName = 'item';
+        for(let i=1; i <= +quantitySoFar; i++ ){
+            let thisObjName= objName + quantitySoFar;
+            let price=new_order[thisObjName].product_unit_price.match(/\d+/g,'');
+            subTotal=subTotal+(+price); 
+              
+        }
+       
+        console.log(subTotal);
+        console.log(quantitySoFar);
+      
+        return subTotal;       
+}
+
+
+
+
+// media queries below!!!!!!!!!!!!!
+
+
+const mediaQuery = '(min-width: 700px)';
+const mediaQueryList = window.matchMedia(mediaQuery);
+
+mediaQueryList.addEventListener('change', event => {
+    console.log(window.innerWidth);
+  if (event.matches) {
+    const style = document.getElementById('mainstyle');
+    style.setAttribute('href','responsive.css');
+  } else {
+    const style = document.getElementById('mainstyle');
+    style.setAttribute('href','style.css');  
+  }
+})
 

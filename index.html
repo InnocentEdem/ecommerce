@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link id="mainstyle" rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
+<script src="https://use.fontawesome.com/942a7b4aee.js"></script>
 <title>Document</title>
 </head>
 <body>
+
+    
     <div class="banner">
     <div class="upper-header">
         <div class="header-text">
@@ -28,8 +31,29 @@
             </div>     
         <i class="fa fa-search"></i>
         <i class="fa-light fa-user-large"></i>
-        <i class="fa fa-shopping-bag"><span id="quantity-top" class="quantity-top">(0)</span></i>
+        <a href="./cart.html"><i class="fa fa-shopping-bag"><span id="quantity-top" class="quantity-top">(0)</span></i></a>
     </div>
+    <div class="big-lower">
+
+    </div>
+    <div class="menu">
+        <div>NEW </div>
+        <div>MEN </div>
+        <div>WOMEN </div>
+        <div>BOYS </div>
+        <div>GIRLS </div>
+        <div>MORE SIZES </div>
+        <div>TIES </div>
+        <div>SALE </div>
+        <div>OUR STORY </div> 
+        <div id="search" class="search">
+            <input id="input" type="text" placeholder="Search">
+            <i class="fa fa-search"></i>
+        </div>
+      
+    </div>
+    <hr>
+    
     <div id="drop-menu" class="drop-menu">
         <div><span>New &nbsp;</span><i class="fa fa-angle-right"></i></div>
         <div><span>Men &nbsp;</span><i class="fa fa-angle-right"></i></div>
@@ -42,84 +66,95 @@
         <div class="directory">
             Home
         </div>
-        <div id="product-name" class="product-name">
-            Printed  Polo Shirt
-        </div>
-        <div class="reviews">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-        </div>
-        <div id="product-picture" class="product-picture">
-            <div id="imageOwnDiv" class="imageOwnDiv">
-                <img class="product-image" src="images/green-shirt.jpg" alt="">
-                <img class="product-image" src="images/green-unfold.jpg" alt="">
-            </div>   
-            <div class="shift">
-                <i id="left" class="fa fa-angle-left"></i>
-                <i id="right" class="fa fa-angle-right"></i>
-            </div>
-        </div>
-        <div id="price" class="price">
-            $99
-        </div>
-        <div class="choose-color">
-            <div id="color-name" class="color-name">
-                Color: Surplus Green
-            </div>
-            <div class="colors">
-                <div id="color1"></div>
-                <div id="color2"></div>
-            </div>
-        </div>
-        <div class="size-select">
-            <div class="ask-for-size">
-                Select Size
-            </div>
-            <div class="size-box">
-                <div class="size">XS</div>
-                <div class="size">S</div>
-                <div class="size">M</div>
-                <div class="size">L</div>
-                <div class="size">XL</div>
-                <div class="size">XXL</div>
-            </div>
-            <div class="availability">
-                Available in Stock
-            </div>
-            <div class="quantity">
-                <div id ="remove" class="remove">
-                    <i id="minus" class="fa fa-minus-circle"></i> 
+            <div class="container">
+                <div id="image-res" class="image-res"></div>
+                    
                 </div>
-                <div id="display-quantity" class="display-quantity">
-                    1
-                </div>
-                <div id="add" class="add">
-                    <i id="plus" class="fa fa-plus-circle"></i>
-                </div>
+                <div class="mid">              
+                    <div id="product-name" class="product-name">
+                    Classic Fit Solid Shirt
+                    </div>
+                    <div id="reviews" class="reviews">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div id="mobile-image" class="mobile-image">
+                        <div id="product-picture" class="product-picture">
+                            <div id="imageOwnDiv" class="imageOwnDiv">
+                                <img id="p-image" class="product-image" src="images/green-shirt.jpg" alt="">
+                                <img class="product-image" src="images/green-unfold.jpg" alt="">
+                            </div>   
+                            <div class="shift">
+                                <i id="left" class="fa fa-angle-left"></i>
+                                <i id="right" class="fa fa-angle-right"></i>
+                            </div>
+                        </div> 
+                    </div>  
+                    <div id="price" class="price">
+                        $99
+                    </div>
+                    <div class="choose-color">
+                        <div id="color-name" class="color-name">
+                            Color: Surplus Green
+                        </div>
+                        <div id="colors"class="colors">
+                            <div id="color1"></div>
+                            <div id="color2"></div>
+                        </div>
+                    </div>
+                    <div class="size-select">
+                        <div class="ask-for-size">
+                            Select Size
+                        </div>
+                    </div>    
+                        <div class="size-box">
+                            <div class="size">XS</div>
+                            <div class="size">S</div>
+                            <div class="size">M</div>
+                            <div class="size">L</div>
+                            <div class="size">XL</div>
+                            <div class="size">XXL</div>
+                        </div>
+                        <div class="availability">
+                            Available in Stock
+                        </div>
+                        <div id="quantity" class="quantity">
+                            <div id ="remove" class="remove">
+                                <i id="minus" class="fa fa-minus-circle"></i> 
+                            </div>
+                            <div id="display-quantity" class="display-quantity">
+                                1
+                            </div>
+                            <div id="add" class="add">
+                                <i id="plus" class="fa fa-plus-circle"></i>
+                            </div>
 
-            </div>
-            <div id="add-to-bag" class="add-to-bag">
-                <div>ADD TO BAG</div>
-            </div>
-            <div class="buy-online">
-                <div>Buy online, free in-store pick-up</div>
-            </div>
-            
-            <div class="delivery-info">
-                <div class="first-line">
-                    <i class="fa fa-truck" aria-hidden="true"></i>
-                    <span class="black">Same Day Delivery -</span>
-                    <span class="blue">Check Availability</span>
-                </div>
-                <div class="second-line">
-                    <i class="amazon"><img src="social/amazon.png" alt=""></i>
-                    <i class="apple"><img src="social/applepay.png" alt="">
-                    </i>
-                </div>
-            </div>
+                        </div>
+                        <div id="add-to-bag" class="add-to-bag">
+                            <div>ADD TO BAG</div>
+                        </div>
+                        <div class="buy-online">
+                            <div>Buy online, free in-store pick-up</div>
+                        </div>
+                        
+                        <div class="delivery-info">
+                            <div class="first-line">
+                                <i class="fa fa-truck" aria-hidden="true"></i>
+                                <span class="black">Same Day Delivery -</span>
+                                <span class="blue">Check Availability</span>
+                            </div>
+                            <div class="second-line">
+                                <i class="amazon"><img src="social/amazon.png" alt=""></i>
+                                <i class="apple"><img src="social/applepay.png" alt="">
+                                </i>
+                            </div>
+                        </div>
+                    
+                </div> 
+            </div>  
             <div class="more-info">
                 <div class="fabric"><h3>Fabric &amp Care</h3><i class="fa fa-plus" aria-hidden="true"></i></div>
                 <div class="review"><h3>Reviews</h3><i class="fa fa-plus" aria-hidden="true"></i></div>

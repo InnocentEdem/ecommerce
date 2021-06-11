@@ -1,0 +1,187 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: sans-serif;
+
+}
+.cartpopup{
+    width: 45vw;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+#banner{
+    background-color: #002b5c;
+    padding-top: 1;
+    color: #fff;
+   
+    text-align: center;
+    justify-content: space-around;
+    margin: 0;
+    margin-left: -4.3478261%;
+    margin-right: -4.3478261%;
+    margin-top: 2%;
+   /* margin-bottom:2% ;*/
+    
+  
+}
+
+#banner h1{
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 100%;
+    text-align: center;
+    padding-left: 30%;
+    padding-bottom: 2%;
+   
+}
+.close_btn{
+    font-size: 90%;
+    background-color: transparent;
+    border:none;
+
+    padding-left: 50px;
+   
+}
+.pricealert{
+    margin-top:1rem;
+}
+
+
+
+
+.fa {
+    color: white;
+    font-weight: 600;
+}
+#banner>h1,#banner>.close_btn{
+    display: inline-block;
+    
+}
+
+.cart_information>#cart_image, .cart_information>#item_information{
+    display: inline-block;
+}
+
+
+
+
+
+#cart_image img{
+    max-width: 15rem;
+    height: auto;
+
+}
+
+
+.cart{
+    display: flex;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+   
+}
+.cart p:first-of-type {
+    margin-right: 2rem;
+    font-size: 1.3rem;
+    color: #002b5c;
+    font-weight: 600;
+  }
+  
+  .cart p:last-of-type {
+    font-size: 1.3rem;
+  }
+
+  #freeShippingqualify {
+    font-size: 1.2rem;
+    color: #002b5c;
+    padding-bottom: 1rem;
+  }
+  
+  progress {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+
+.mainprice{
+    
+    color: red;
+}
+
+#subtotal{
+    padding-bottom: 2%;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+   
+    padding-top: 2%;
+}
+#checkout{
+    color: white;
+    font-weight: 600;
+    background-color: #002b5c;
+    font-size: 1.5rem;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+#continue_shopping{
+    color: #002b5c;
+    background-color: white;
+    border: 1px solid #002b5c;
+    border-radius: 5px;
+}
+#checkout,
+#continue_shopping {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  outline: 0;
+  cursor: pointer;
+}
+#newprice {
+    color: red;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  #oldprice {
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: line-through;
+  }
+  #producttype{
+    color: #333;  
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  #quantity{
+    color: #333;  
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  #price{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    
+  }
+
+   #item_information {
+    font-size: 1rem;
+    color: #002b5c;
+    padding-left: 1%;
+  }

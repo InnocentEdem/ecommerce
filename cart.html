@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"> 
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="top">
+        UP TO 50% OFF ALL SALES STYLES! SHOP NOW>
+    </div>
+    <div class="big_nav">
+        <ul>
+            <li>
+                Sign In
+            </li> 
+            <li>
+                <i class="fa fa-suitcase" aria-hidden="true"></i>
+
+            </li>
+        </ul>
+    </div>
+    <div class="nav">
+        <ul>
+            <li>
+                <i id="hamburger" onclick="show()" class="fa fa-bars" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-suitcase" aria-hidden="true"></i>
+
+            </li>
+        </ul>
+    </div>
+    <div class="hamburger_menu">
+        <ul>
+            <li>
+                New
+            </li>
+            <li>
+                Men
+            </li>
+            <li>
+                Women
+            </li>
+            <li>
+                More Sizes
+            </li>
+            <li>
+                Sales
+            </li>
+            <li>
+                Ship To
+            </li>        
+        </ul>
+    </div>
+    <div class="header">
+        <h1>My Bag</h1>
+        <div class="counter">1</div>
+    </div>
+    <div class="progress_bar" >
+        <progress style="height: 1rem;" value="60" max="100">
+    </div>
+    <div class="shipping">
+        <h4>Add $50.00</h4> to qualify for FREE SHIPPING <br>
+        <h4>In-store pickup</h4> is <h4>Always free</h4> <br>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i><h5>SAME DAY DELIVERY!</h5> -
+        <a href="">Check Availability</a>
+    </div>
+    <hr>
+    <div id="cart-container" class="cart-container">
+        <div class="product_details">
+            <div class="product-img">
+                <img id="del_image" src="images/blue-shirt.jpg" class="product-image" alt="Opps image not found!!! Please try again later">
+            </div>
+            <div class="description">
+                <h4>Classic Fit Solid Fold</h4><br>
+                <!-- <h6>Style</h6>: 2D023 |  -->
+                <h6>Color</h6>: Dark Blue |
+                <h6>Size</h6>: 50 <br>
+                <select name="" id="dropdown">
+                    <option value="1">1<i class="fa fa-angle-down" aria-hidden="true"></i></option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <h6>Unit Price <br>@ $120</h6> &nbsp;&nbsp;&nbsp;
+                <h6>Total Price <br>$120</h6>
+                <div class="right">
+                    <div class="chckbx">
+                        <input type="checkbox"> Free gift package?
+                    </div>
+                    <hr>
+                    <div class="radiobtn">
+                        <input type="radio" checked> <b>Ship to Me</b> 
+                    </div>
+                    <div class="radiobtn">
+                        <input type="radio"> In-Store Pickup
+                    </div>
+                    <div class="radiobtn">
+                        <input type="radio"> Curbside Pickup
+                    </div>
+                </div>
+                
+            
+            </div>
+
+        </div>
+    </div>    
+    <!-- <hr>
+    
+    <div id="product_details1">
+
+    </div>
+    <div id="product_details2">
+
+    </div> -->
+    <div class="remedit">
+        <a id="delete_item" onclick="remove()" href="">Remove</a>
+        
+    </div>
+    <div class="summary">
+        <div class="order_summary">
+            <h3>Order Summary</h3>
+            <h5>1 items</h5>
+        </div>
+        <div class="subtotal">
+            <dt>Subtotal</dt>
+            <dd>$120</dd>
+            <dt>
+                Shipping & Handling <br>
+                Standard Ground
+            </dt>
+            <dd>10</dd>
+            <dt>Sales Tax</dt>
+            <dd>$0.00</dd>
+            <dt>ESTIMATED TOTAL*</dt>
+            <dd id="total">$85.00</dd>
+        </div>
+
+        <div class="coupon">
+            <input id="coupon_code" type="text" placeholder="Enter coupon code"> <button id="apply_coupon"  onclick="discount()" class="coup_btn">Apply</button>
+        </div>
+        <div class="checkout">
+            <button id="checkout_id" class="checkout">C H E C K O U T</button>
+        </div>
+        <h2>Or pay with:</h2>
+        <div class="paypal">
+            <button id="paypal_id" class="paypal">
+                <i class="fa fa-paypal" aria-hidden="true"></i>PayPal
+            </button>
+        </div>
+        <div class="amazon">
+            <button id="amazon_id" class="amazon">
+                <i class="fa fa-amazon" aria-hidden="true"></i>
+                    Pay
+            </button>
+        </div>
+        
+
+    </div>
+    <div class="bottom_list">
+            <ul>
+                <li><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    MY ACCOUNT</li>
+                <li><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    SERVICES</li>
+                <li><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    ABOUT US</li>
+                <li><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    OUR COMMUNITY</li>
+            </ul>
+    </div>
+    <div class="icons">
+        <ul>
+            <li>
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-youtube" aria-hidden="true"></i>
+            </li>
+            <li>
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+            </li>
+        </ul>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="https://use.fontawesome.com/d128d6e72f.js"></script>
+    <!-- <script src="js/app.js"></script>
+    <script src="js/script.js"></script> -->
+    
+</body>
+</html>
+
+
+
+
+
