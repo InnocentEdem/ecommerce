@@ -39,13 +39,16 @@ let cartSubTotal=(new_order)=>{
     return subTotal;       
 }
 
-//remove handler !!!!!!
+//Delete Handler !!!!!!
 
 function remove(itemName){
     idToRemove=itemName.getAttribute('id');
     toRemove = document.getElementById(idToRemove);
     let jsonString=localStorage.getItem("new_order");
     let new_order = JSON.parse(jsonString);
+    let costToDelete = +new_order[idToRemove].product_unit_price.match(/\d+/g)*(+new_order[idToRemove].quantity);
+    new_order.subTotal= +new_order.subTotal-costToDelete;
+    new_order.discounted=+new_order.subTotal/2;
     delete new_order[idToRemove];
     console.log(new_order.counter);
    
@@ -62,17 +65,17 @@ function remove(itemName){
         console.log(new_order[newIndex])
     }
     new_order.counter= +new_order.counter-1;
-    cartSubTotal(new_order);
+
+    if (+new_order.counter===0){ localStorage.clear();}
+    else{
     localStorage.clear();
     localStorage.setItem("new_order", JSON.stringify(new_order));
     toRemove.remove();
-    createCartObjects();
+    createCartObjects();}
    
     
 }
 
-
-//sub total
     
 
 
@@ -87,7 +90,6 @@ let createCartObjects=()=>{
         const cartContainer=document.getElementById('cart-container');
         let jsonString=localStorage.getItem("new_order");
         let new_order = JSON.parse(jsonString);
-        cartSubTotal(new_order);
         let id=''; 
         let image='';
         let pname='';
