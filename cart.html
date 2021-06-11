@@ -82,44 +82,7 @@
     </div>
     <hr>
     <div id="cart-container" class="cart-container">
-        <div class="product_details">
-            <div class="product-img">
-                <img id="del_image" src="images/blue-shirt.jpg" class="product-image" alt="Opps image not found!!! Please try again later">
-            </div>
-            <div class="description">
-                <h4>Classic Fit Solid Fold</h4><br>
-                <!-- <h6>Style</h6>: 2D023 |  -->
-                <h6>Color</h6>: Dark Blue |
-                <h6>Size</h6>: 50 <br>
-                <select name="" id="dropdown">
-                    <option value="1">1<i class="fa fa-angle-down" aria-hidden="true"></i></option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <h6>Unit Price <br>@ $120</h6> &nbsp;&nbsp;&nbsp;
-                <h6>Total Price <br>$120</h6>
-                <div class="right">
-                    <div class="chckbx">
-                        <input type="checkbox"> Free gift package?
-                    </div>
-                    <hr>
-                    <div class="radiobtn">
-                        <input type="radio" checked> <b>Ship to Me</b> 
-                    </div>
-                    <div class="radiobtn">
-                        <input type="radio"> In-Store Pickup
-                    </div>
-                    <div class="radiobtn">
-                        <input type="radio"> Curbside Pickup
-                    </div>
-                </div>
-                
-            
-            </div>
-
-        </div>
+        
     </div>    
     <!-- <hr>
     
@@ -129,31 +92,22 @@
     <div id="product_details2">
 
     </div> -->
-    <div class="remedit">
-        <a id="delete_item" onclick="remove()" href="">Remove</a>
+    
         
-    </div>
+    
     <div class="summary">
         <div class="order_summary">
             <h3>Order Summary</h3>
-            <h5>1 items</h5>
+            <h5 id="s_Counter">1 items</h5>
         </div>
-        <div class="subtotal">
-            <dt>Subtotal</dt>
-            <dd>$120</dd>
-            <dt>
-                Shipping & Handling <br>
-                Standard Ground
-            </dt>
-            <dd>10</dd>
-            <dt>Sales Tax</dt>
-            <dd>$0.00</dd>
-            <dt>ESTIMATED TOTAL*</dt>
-            <dd id="total">$85.00</dd>
+        <div  class="stotal">
+           <div id="muv"><span>Sub-Total:</span><span  id="s_Total">000</span></div>
+           <div><span>Tax:</span><span id="tax">000</span></div>
+           <div><span>Estimated Total:</span ><span id="sEstimate">000</span></div>
         </div>
 
         <div class="coupon">
-            <input id="coupon_code" type="text" placeholder="Enter coupon code"> <button id="apply_coupon"  onclick="discount()" class="coup_btn">Apply</button>
+            <input id="coupon_code" type="text" placeholder="Enter coupon code"> <button id="apply_coupon" onclick="applyCoupon()" class="coup_btn">Discount</button>
         </div>
         <div class="checkout">
             <button id="checkout_id" class="checkout">C H E C K O U T</button>

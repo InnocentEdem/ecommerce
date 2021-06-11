@@ -42,9 +42,12 @@ movePixRight.addEventListener('click',()=>{changePicture('R')});
 
 if(OnDisplayNow===""){
 pictureList[movementTracker].style.display='block';
+OnDisplayNow = "green";
 }
-else if(OnDisplayNow==="green"){loadGreenShirt();pictureList[movementTracker].style.display='block';}
-else{loadBlueShirt();pictureList[movementTracker].style.display='block';}
+else if(OnDisplayNow==="green"){loadGreenShirt();pictureList[movementTracker].style.display='block';
+}
+else{loadBlueShirt();pictureList[movementTracker].style.display='block';
+}
 
 
 
@@ -197,6 +200,8 @@ function generateOrderNumber(){           //this function generates a random ord
     return orderNumberArray.join("");
 }
 
+// order and object handling!!!
+
 
 document.getElementById('add-to-bag').addEventListener('click',(e)=>{ orderHandler();})
 
@@ -210,9 +215,8 @@ function orderHandler(){
         console.log(quantityTag.innerHTML)
         let thisSubTotal= +thisUnitPrice * thisQuantity;
         let thisDiscount = thisSubTotal/2;
-        let thisUrl= document.getElementById('p-image').src
+        //let thisUrl= document.getElementById('p-image').src
         new_order={
-            urlOfImage:thisUrl,
             order_number: newOrderNumber,
             discount_coupon: coupon,
             counter:1,
@@ -223,27 +227,30 @@ function orderHandler(){
                   product_color: colorDescription.innerText,
                   quantity:quantityTag.innerText,
                   size:sizeInfo,
+                  urlOfImage:imageLink(),
                  }
         }
         localStorage.setItem("new_order", JSON.stringify(new_order));
         let retrieveQuantity = new_order.item1.quantity;
         bagQuantity.innerText=retrieveQuantity;
-        console.log(new_order);
+
     }
     else {
         let jsonString=localStorage.getItem("new_order");
         let new_order = JSON.parse(jsonString);
-        new_order.counter = +new_order.counter+1
+        new_order.counter = +new_order.counter + 1;
+        console.log(new_order.counter + 'add');
         let serial='item'+ new_order.counter.toString();
-        thisUrl= document.getElementById('p-image').src
+        //thisUrl= document.getElementById('p-image').src
         new_order[serial]={product_name: productName.innerText,
                           product_unit_price:productPrice.innerText,
                           product_color: colorDescription.innerText,
-                          urlOfImage:document.getElementById('p-image').src,
+                          urlOfImage:imageLink(),
                           size:sizeInfo,
-                          quantity:quantityTag.innerText, }; 
-             new_order.subTotal= cartSubTotal(); 
-             new_order.discounted = cartSubTotal()/2         
+                          quantity:quantityTag.innerText, } 
+             new_order.subTotal= cartSubTotal(new_order);
+             console.log(new_order);
+             new_order.discounted = cartSubTotal(new_order)/2         
             localStorage.clear();
             localStorage.setItem("new_order", JSON.stringify(new_order));        
             newQuantity = +bagQuantity.innerText + (+new_order[serial].quantity);
@@ -251,24 +258,38 @@ function orderHandler(){
            
             console.log(new_order);
     }
+    function imageLink(){
+        let theUrl;
+        if(OnDisplayNow==='green'){
+            theUrl=GreenShirt.images[1];
+        }
+        else{
+            theUrl=BlueShirt.images[1];
+        }
+        return theUrl;
+    }
+   
        
 }
 
-let cartSubTotal=()=>{
-        let jsonString=localStorage.getItem("new_order");
-        let new_order = JSON.parse(jsonString);
+//cart addition here!!!!!
+let cartSubTotal=(new_order)=>{
+        
+        console.log(new_order);
         let subTotal=0;
-         quantitySoFar=new_order.counter;
+         let quantitySoFar=new_order.counter;
+         console.log(quantitySoFar+'quan')
+
         let objName = 'item';
         for(let i=1; i <= +quantitySoFar; i++ ){
             let thisObjName= objName + quantitySoFar;
-            let price=new_order[thisObjName].product_unit_price.match(/\d+/g,'');
-            subTotal=subTotal+(+price); 
-              
+            let price=+new_order[thisObjName].product_unit_price.match(/\d+/g);
+            console.log(i);
+           
+            subTotal=subTotal+(price); 
+            
         }
-       
-        console.log(subTotal);
-        console.log(quantitySoFar);
+        console.log(subTotal)
       
         return subTotal;       
 }
