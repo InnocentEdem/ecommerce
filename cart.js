@@ -18,6 +18,7 @@ function applyCoupon(){
 
 let cartSubTotal=(new_order)=>{
         
+    console.log(new_order);
     let subTotal=0;
      let quantitySoFar=new_order.counter;
      console.log(quantitySoFar+'quan')
@@ -25,19 +26,19 @@ let cartSubTotal=(new_order)=>{
     let objName = 'item';
     for(let i=1; i <= +quantitySoFar; i++ ){
         let thisObjName= objName + quantitySoFar;
-        let price=+new_order[thisObjName].product_unit_price.match(/\d+/g);
+        let price=+new_order[thisObjName].product_unit_price.match(/\d+/g)*(+new_order[thisObjName].quantity);
         console.log(i);
        
         subTotal=subTotal+(price); 
         
     }
-    new_order.subTotal= cartSubTotal(new_order);
-    console.log(new_order);
-    new_order.discounted = cartSubTotal(new_order)/2       
-    console.log(subTotal)
   
     return subTotal;       
 }
+    
+  
+  
+
 
 //Delete Handler !!!!!!
 
@@ -51,7 +52,6 @@ function remove(itemName){
     new_order.discounted=+new_order.subTotal/2;
     delete new_order[idToRemove];
     console.log(new_order.counter);
-   
     let baseName= +idToRemove.match(/\d+/g,'');
     newIndex = +baseName+1;
     while(new_order['item'+newIndex]){
@@ -59,9 +59,7 @@ function remove(itemName){
         oldIndex='item'+(newIndex);
         new_order[objname]=new_order[oldIndex];
         delete new_order[oldIndex];
-        newIndex++
-
-        
+        newIndex++     
         console.log(new_order[newIndex])
     }
     new_order.counter= +new_order.counter-1;
@@ -75,10 +73,22 @@ function remove(itemName){
    
     
 }
-
-    
-
-
+ 
+function changeQty(thisid){
+  let theid= document.getElementById(thisid).getAttribute('id');
+ let value = document.getElementById(theid).value;
+ console.log(theid + value);
+ let jsonString=localStorage.getItem("new_order");
+ let new_order = JSON.parse(jsonString);
+ new_order['item'+ theid].quantity=+value;
+ new_order.subTotal= cartSubTotal(new_order);
+ new_order.discounted = cartSubTotal(new_order)/2       
+   
+ localStorage.clear();
+ localStorage.setItem("new_order", JSON.stringify(new_order));
+ 
+ createCartObjects()
+}
 
 
 
@@ -97,7 +107,7 @@ let createCartObjects=()=>{
         let price=''; 
         let cost=''; 
         let size='';
-        
+        let qty='';
         cartContainer.innerHTML="";
         let displaysTotal= document.getElementById('s_Total');
         let displayEst = document.getElementById('sEstimate');
@@ -115,7 +125,8 @@ let createCartObjects=()=>{
                             pname = new_order[itemNum].product_name;
                             color = new_order[itemNum].product_color;
                             price = new_order[itemNum].product_unit_price;
-                            size = new_order[itemNum].size                  
+                            size = new_order[itemNum].size ;
+                            qty =  new_order[itemNum].quantity;                
                             cost = (+new_order[itemNum].quantity) * (+new_order[itemNum].product_unit_price.match(/\d+/g));
 
                             newTag = document.createElement('div');
@@ -131,7 +142,7 @@ let createCartObjects=()=>{
                             document.getElementById('size'+c).innerText=size;
                             document.getElementById('unit_price'+c).innerText=price;
                             document.getElementById('total_price'+c).innerText= '$'+cost;
-                
+                            document.getElementById(c).placeholder= qty;
                         }
                         displaysTotal.innerText=new_order.subTotal;
                         displayEst.innerText=new_order.subTotal;
@@ -156,12 +167,8 @@ function htmlFormat(c){
     <!-- <h6>Style</h6>: 2D023 |  -->
     <h6 id="color${c}"></h6>
     <h6 id="size${c}">Size</h6> <br>
-    <select name="" id="dropdown">
-        <option value="1">1<i class="fa fa-angle-down" aria-hidden="true"></i></option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+    <p><input class="multiplier" id=${c} type="number" min="1" step="1" max="10")">
+        <button onclick="changeQty(${c})" >Update</button></p>
     </select>
     <h6><div>Unit price</div><br><div id="unit_price${c}">120</div></h6> &nbsp;&nbsp;&nbsp;
     <h6><div>Total Price</div> <br><div id="total_price${c}">$120</div></h6>
@@ -189,5 +196,6 @@ function htmlFormat(c){
 `;
 return text;
 }
+
 
 

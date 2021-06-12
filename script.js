@@ -283,7 +283,7 @@ let cartSubTotal=(new_order)=>{
         let objName = 'item';
         for(let i=1; i <= +quantitySoFar; i++ ){
             let thisObjName= objName + quantitySoFar;
-            let price=+new_order[thisObjName].product_unit_price.match(/\d+/g);
+            let price=+new_order[thisObjName].product_unit_price.match(/\d+/g)*(+new_order[thisObjName].quantity);
             console.log(i);
            
             subTotal=subTotal+(price); 
