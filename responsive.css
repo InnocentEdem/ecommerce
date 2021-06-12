@@ -402,4 +402,92 @@ display: none;
 .social{
     text-align: center;
 }
+.pop_up{
+    position: fixed;
+    top: 40px;
+    right: 0;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    height: 55rem;
+    width: 50rem;
+    z-index: 10000000;
+    background-color: white;
+    display: none;
+       
+}
+.imagesum>image{
+    width: 0.5rem;
+    height:1rem;
+}
+.imagesum{
+    width:15rem;
+    height:15rem;
+    padding: 2rem;
+    padding-left:3rem ;
+}
+
+.under{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0rem;
+    padding-top: 1rem;
+}
+.under>div{
+    padding: 1rem;
+    margin-left: 5rem;
+}
+.checkout{
+    width: 40rem;
+    padding: 2rem;
+    border-radius: 5px;
+    font-weight: lighter;
+}
+button{
+    border: solid 1px rgba(0, 0, 0, 0.3);
+}
+.order_summary>h3{
+    text-align: center;
+    padding:2rem
+}
+.order_summary{
+    text-align: center;
+}
+#checkout_id{
+background-color:rgba(0, 43, 92, 1) ;
+color: white;
+cursor: pointer;
+}
+ #continue{
+ background-color:white;
+ color: rgba(0, 43, 92, 1)ite;
+ cursor: pointer;
+}
+.imagesum,.sum{
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem;
+}
+.sum>h4{
+    padding: 0.5rem;
+    padding-left: rem;
+}
+.image-summary{
+    margin-left: 4rem;
+}
+
+.imagesum>#imagesum{
+    position: relative;
+    object-fit: cover;
+    width: 85%;
+    
+}
+.order_summary>i{
+   
+   margin-left: 5rem;
+  
+   float: right;
+   margin-top: 2.5rem;
+   border: solid;
+}
+
+
  

@@ -11,7 +11,42 @@
 <title>Document</title>
 </head>
 <body>
+    <div class="pop_up" id="pop_up">
+        <div class="order_summary">
+            <h3>ORDERS ADDED TO CART</h3><i id="pop_close" onclick="popClose()" class="fa fa-close"></i>
+        </div>
+        <div class="image-summary">
+            <div class="imagesum"><img id="imagesum" src="images/green-worn2.jpg" alt=""></div>
+            <div class="sum">
+                <h3><span id="sumItemName"></span></h3><br>
+            <h3><span id="sumColor"></span></h3><br>
+             <h3><span>Unit Price: &nbsp;&nbsp;</span><span id="unit_price"></span></h3><br>
+             <h3><span>Quantity: &nbsp;&nbsp;</span><span id="sumQty"></span></h3><br>
+             <h3><span>This order:&nbsp; $&nbsp;&nbsp;</span><span id="sCost"></span></h3><br>
+                <h3><span class="qty"></span><span class="cart-total"></span></h3>
+            </div>
+        </div>
+        <div class="under" >
+           
 
+            <div  class="stotal">
+            <div id="sum-muv"></div>
+            </div>
+            <div class="checkout ">
+                <button id="additional"  class="checkout"><span> 
+                    Cart Sub-Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;
+
+                </span><span  id="s_Total">000</span></button>
+            </div> 
+            <div class="checkout">
+                <a href="./cart.html"><button id="checkout_id" class="checkout">C H E C K  O U T</button></a>
+            </div>  
+            <div class="checkout">
+                <button id="continue" class="checkout" onclick="popClose()">C O N T I N U E &nbsp S H O P P I N G</button>
+            </div>
+        </div>
+    </div>
     
     <div class="banner">
     <div class="upper-header">
@@ -45,7 +80,8 @@
         <div>MORE SIZES </div>
         <div>TIES </div>
         <div>SALE </div>
-        <div>OUR STORY </div> 
+        <div>OUR STORY </div>
+        <div><a href="./cart.html"><i class="fa fa-shopping-bag"><span id="quantity-top" class="quantity-top">(0)</span></i></a></div> 
         <div id="search" class="search">
             <input id="input" type="text" placeholder="Search">
             <i class="fa fa-search"></i>

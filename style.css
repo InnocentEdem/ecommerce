@@ -3,7 +3,10 @@
     font-family: 'Nunito Sans', sans-serif;
     overflow-x: hidden;
 }
-
+.pop_up{
+    display: none;
+    
+}
 
 
 .banner{

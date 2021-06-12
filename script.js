@@ -12,8 +12,6 @@
  adder.addEventListener('click',()=>{quantityControl('add')});     //moved from module
  remover.addEventListener('click', ()=>{quantityControl('minus')});    //moved from module
  
- 
-
 const hamburger= document.getElementById('hambars');  //hamburger control
 const dropMenu= document.getElementById('drop-menu');
 const closeHamburger=document.getElementById('hamclose');
@@ -203,7 +201,7 @@ function generateOrderNumber(){           //this function generates a random ord
 // order and object handling!!!
 
 
-document.getElementById('add-to-bag').addEventListener('click',(e)=>{ orderHandler();})
+document.getElementById('add-to-bag').addEventListener('click',(e)=>{ orderHandler(); })
 
 function orderHandler(){
     
@@ -255,10 +253,13 @@ function orderHandler(){
             localStorage.setItem("new_order", JSON.stringify(new_order));        
             newQuantity = +bagQuantity.innerText + (+new_order[serial].quantity);
             bagQuantity.innerText=newQuantity;
-           
+            popUpHandler(new_order);
             console.log(new_order);
     }
-    function imageLink(){
+
+
+
+    function imageLink(){             // image display
         let theUrl;
         if(OnDisplayNow==='green'){
             theUrl=GreenShirt.images[1];
@@ -268,12 +269,14 @@ function orderHandler(){
         }
         return theUrl;
     }
+
+    
    
        
 }
 
 //cart addition here!!!!!
-let cartSubTotal=(new_order)=>{
+let cartSubTotal=(new_order)=>{   // Add 
         
         console.log(new_order);
         let subTotal=0;
@@ -300,7 +303,7 @@ let cartSubTotal=(new_order)=>{
 // media queries below!!!!!!!!!!!!!
 
 
-const mediaQuery = '(min-width: 700px)';
+const mediaQuery = '(min-width: 700px)';                    //Mediawatch for responsive display
 const mediaQueryList = window.matchMedia(mediaQuery);
 
 mediaQueryList.addEventListener('change', event => {
@@ -314,3 +317,27 @@ mediaQueryList.addEventListener('change', event => {
   }
 })
 
+//Pop-up Cart Handler!!!!!!!!
+
+function popUpHandler(new_order){                  //Open popup and populate the data
+    let pop = document.getElementById('pop_up');
+        let index = new_order.counter;
+        let base = 'item'+ index;
+        document.getElementById('sumItemName').innerText = new_order[base].product_name;
+        document.getElementById('unit_price').innerText = new_order[base].product_unit_price;
+        document.getElementById('sumColor').innerText = new_order[base].product_color;
+        document.getElementById('sumQty').innerText = new_order[base].quantity;
+        orderCost = +new_order[base].quantity * (+new_order[base].product_unit_price.match(/\d+/g,''));
+        document.getElementById('sCost').innerText = orderCost;
+        document.getElementById('s_Total').innerText = new_order.subTotal;
+        document.getElementById('imagesum').src = new_order[base].urlOfImage;
+        console.log(new_order.urlOfImage)
+
+        pop.style.display="block";
+
+
+}
+
+function popClose(){
+    document.getElementById('pop_up').style.display = ('none');// close the popup
+}
