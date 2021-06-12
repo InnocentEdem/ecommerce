@@ -15,6 +15,7 @@ body{
 .big_nav{
     display: none;
 }
+
 .nav{
     border-bottom: 1px solid #dedede;
     height: 3rem;
@@ -75,16 +76,16 @@ body{
     display: inline-block;
     color: #e0697f;
     margin: 0;
-    font-size: 0.9rem; 
+    font-size: 0.4rem; 
 }
 .shipping h5{
     display: inline-block;
-    margin-left: 0.5rem;
+    margin-left: 0.3rem;
     color: #4b851d;
 }
 .shipping a{
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.4rem;
     color: #2d9cdb;
 }
 .shipping i{
@@ -104,7 +105,7 @@ img{
     position: static;
     right: 4.5rem;
     top: 20.3rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 .description h6{
     display: inline-block;
@@ -114,7 +115,7 @@ img{
 .description h4{
     margin: 0;
     color: #196692;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 .description #dropdown{
     background-color: white;
