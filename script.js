@@ -231,6 +231,7 @@ function orderHandler(){
         localStorage.setItem("new_order", JSON.stringify(new_order));
         let retrieveQuantity = new_order.item1.quantity;
         bagQuantity.innerText=retrieveQuantity;
+        popUpHandler(new_order)
 
     }
     else {
@@ -286,7 +287,7 @@ let cartSubTotal=(new_order)=>{   // Add
         let objName = 'item';
         for(let i=1; i <= +quantitySoFar; i++ ){
             let thisObjName= objName + quantitySoFar;
-            let price=+new_order[thisObjName].product_unit_price.match(/\d+/g)*(+new_order[thisObjName].quantity);
+            let price=+new_order[thisObjName].product_unit_price.match(/\d+/g,'')*(+new_order[thisObjName].quantity);
             console.log(i);
            
             subTotal=subTotal+(price); 
