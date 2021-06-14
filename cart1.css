@@ -76,7 +76,7 @@ body{
     display: inline-block;
     color: #e0697f;
     margin: 0;
-    font-size: 0.4rem; 
+    font-size: 0.8rem; 
 }
 .shipping h5{
     display: inline-block;
@@ -85,7 +85,7 @@ body{
 }
 .shipping a{
     text-decoration: none;
-    font-size: 0.4rem;
+    font-size: 0.8rem;
     color: #2d9cdb;
 }
 .shipping i{
@@ -501,9 +501,10 @@ h6{
 
 .remedit{
     position: static;
-    padding:1rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    padding:1.5rem;
+    padding-top: 0.4rem;
+    margin-top: 5rem;
+    padding-bottom: 0.4rem;
     /* margin-top: 1%; */
     border: solid 1px rgb(207, 26, 26);
     background-color:rgb(207, 26, 26);
@@ -513,4 +514,12 @@ h6{
     text-align: center;
    
     top: 0rem; 
+}
+.radiobtn{
+    margin-left: 3rem;
+}
+.chckbx{
+    margin-left: 3rem;
+    margin-top: 0px;
+    margin-bottom: 0.5rem;
 }
