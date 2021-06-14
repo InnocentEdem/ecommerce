@@ -21,17 +21,24 @@ let cartSubTotal=(new_order)=>{
     console.log(new_order);
     let subTotal=0;
      let quantitySoFar=new_order.counter;
+     console.log(quantitySoFar+'quan')
+
     let objName = 'item';
     for(let i=1; i <= +quantitySoFar; i++ ){
-        let thisObjName= objName + i;
+        let thisObjName= objName + quantitySoFar;
         let price=+new_order[thisObjName].product_unit_price.match(/\d+/g)*(+new_order[thisObjName].quantity);
-        console.log(i);   
-        subTotal=subTotal+(price);    
+        console.log(i);
+       
+        subTotal=subTotal+(price); 
+        
     }
   
     return subTotal;       
 }
     
+  
+  
+
 
 //Delete Handler !!!!!!
 
@@ -66,19 +73,20 @@ function remove(itemName){
    
     
 }
+ 
 function changeQty(thisid){
   let theid= document.getElementById(thisid).getAttribute('id');
  let value = document.getElementById(theid).value;
- if (+value > 0 && +value <= 10){
+ console.log(theid + value);
  let jsonString=localStorage.getItem("new_order");
  let new_order = JSON.parse(jsonString);
  new_order['item'+ theid].quantity=+value;
  new_order.subTotal= cartSubTotal(new_order);
  new_order.discounted = cartSubTotal(new_order)/2       
-   console.log(value);
+   
  localStorage.clear();
  localStorage.setItem("new_order", JSON.stringify(new_order));
- }
+ 
  createCartObjects()
 }
 
@@ -106,7 +114,7 @@ let createCartObjects=()=>{
         let displayCoupon = document.getElementById('coupon_code');
         
 
-                    if (new_order){
+                    if (new_order && new_order.counter>=1){
                         for(let i=1; i<= new_order.counter; i++ ){
                             
                             itemNum = 'item'+ i;
@@ -139,8 +147,6 @@ let createCartObjects=()=>{
                         displaysTotal.innerText=new_order.subTotal;
                         displayEst.innerText=new_order.subTotal;
                         displayCoupon.placeholder=new_order.discount_coupon;
-                        document.getElementById('s_counter1').innerHTML=new_order.counter;
-                        document.getElementById('s_counter').innerText=new_order.counter;
 
 
                     }
@@ -168,29 +174,15 @@ function htmlFormat(c){
     <h6><div>Total Price</div> <br><div id="total_price${c}">$120</div></h6>
     </div>
     <div class="right">
-        <div class="chckbx">
-            <input type="checkbox"> Free gift package?
-        </div>
-        <hr><br>
-        <div class="radiobtn">
-            <input type="radio" checked name = "radio"> <span>Ship to Me</span> <br>
-            <input type="radio" name = "radio"> <span>In-Store Pickup </span><br>
-            <input type="radio" name = "radio"> <span>Curbside Pickup</span>
-        </div>
+        
     
        
         <div class="remedit">
         <div> <a id="item${c}" onclick="remove(item${c})" href="">Remove</a></div></div>
     </div>
    
-
 </div>
-
 </div>
-
 `;
 return text;
 }
-
-
-

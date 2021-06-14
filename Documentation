@@ -1,0 +1,41 @@
+
+                                                Documentation For The E-commerce Website
+            
+             Academic Disclosure: 
+            This work includes together with my original work(95%),research done on the internet, snippets of code copied
+            from the internet and ideas gathered from colleagues and friends. it is likely that some lines of  code found herein
+            could be found elsewhere.
+
+            List of functions in Script:                            
+            loadBlueShirt()
+            loadGreenShirt()
+            deleteCurrentImages()
+            hamburgerOpen()
+            hamburgerClose()
+            changePicture()
+            sizehandler()
+            quantityControl()
+            couponCodeGenerator()
+            generateOrderNumber()
+            orderHandler()--> imageLink()
+            cartSubTotal()
+            MediaQuery EventListener functions
+            popUpHandler()
+            popClose()
+
+            List of funtion in Cart Page Script
+            applyCoupon()
+            cartSubTotal()
+            remove()
+            changeQty()
+            createCartObjects()
+            htmlFormat()
+
+            List of objects:
+            new_order
+            loadGreenShirt
+            BlueShirt
+
+
+
+
