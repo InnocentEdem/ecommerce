@@ -26,6 +26,7 @@ const colorDescription = document.getElementById('color-name');//HTML Tag for co
 const colorBtn1 = document.getElementById('color1');    // color selector button
 const colorBtn2 = document.getElementById('color2');  //color selector button
 const bagQuantity = document.getElementById('quantity-top');
+const bagQuantityB = document.getElementById('quantity-top-B');
 
 
 var sizeInfo = "";
@@ -46,20 +47,24 @@ else if(OnDisplayNow==="green"){loadGreenShirt();pictureList[movementTracker].st
 }
 else{loadBlueShirt();pictureList[movementTracker].style.display='block';
 }
+if(+bagQuantityB.innerText.match(/\d+/g,'') ===0){
+    bagQuantityB.style.color=" rgba(0, 43, 92, 1)";
+    bagQuantity.style.color="rgba(0, 43, 92, 1)";
+}
 
 
 
 GreenShirt={                                                      //greenshirt product object
     banner:"Classic Fit Solid Shirt",
     images:['images/green-shirt.jpg','images/green-unfold.jpg','green-worn.jpg','green-worn2.jpg'],
-    price:"95",
+    price:"$100",
     className:"product-image",
     productInfo: "Color: Surplus Green",
     color:"#8a9591"
 }
 BlueShirt={                                                      //blueshirt product object
     banner:"Classic Fit Solid Shirt",
-    price:"120",
+    price:"$120",
     images:['images/blue-shirt.jpg', 'images/blue-unfold.jpg'],
     className: "product-image",
     productInfo: "Color: Blue Blazer" ,
@@ -228,10 +233,12 @@ function orderHandler(){
                   urlOfImage:imageLink(),
                  }
         }
+        popUpHandler(new_order);
         localStorage.setItem("new_order", JSON.stringify(new_order));
         let retrieveQuantity = new_order.item1.quantity;
-        bagQuantity.innerText=retrieveQuantity;
-        popUpHandler(new_order)
+        bagQuantity.innerText=`(${newQuantity})`;
+        bagQuantityB.innerText=`(${newQuantity})`;
+       
 
     }
     else {
@@ -248,14 +255,16 @@ function orderHandler(){
                           size:sizeInfo,
                           quantity:quantityTag.innerText, } 
              new_order.subTotal= cartSubTotal(new_order);
-             console.log(new_order);
+             
              new_order.discounted = cartSubTotal(new_order)/2         
             localStorage.clear();
             localStorage.setItem("new_order", JSON.stringify(new_order));        
-            newQuantity = +bagQuantity.innerText + (+new_order[serial].quantity);
-            bagQuantity.innerText=newQuantity;
+            bagQuantity.innerText=`(${new_order.counter})`;
+            bagQuantityB.innerText=`(${new_order.counter})`;
+            bagQuantityB.style.color="rgb(223,5,5)";
+            bagQuantity.style.color="rgb(223,5,5)";
             popUpHandler(new_order);
-            console.log(new_order);
+            console.log((+new_order[serial].quantity));
     }
 
 
@@ -286,7 +295,7 @@ let cartSubTotal=(new_order)=>{   // Add
 
         let objName = 'item';
         for(let i=1; i <= +quantitySoFar; i++ ){
-            let thisObjName= objName + quantitySoFar;
+            let thisObjName= objName + i;
             let price=+new_order[thisObjName].product_unit_price.match(/\d+/g,'')*(+new_order[thisObjName].quantity);
             console.log(i);
            
@@ -316,7 +325,7 @@ mediaQueryList.addEventListener('change', event => {
     const style = document.getElementById('mainstyle');
     style.setAttribute('href','style.css');  
   }
-})
+}) 
 
 //Pop-up Cart Handler!!!!!!!!
 
@@ -332,7 +341,6 @@ function popUpHandler(new_order){                  //Open popup and populate the
         document.getElementById('sCost').innerText = orderCost;
         document.getElementById('s_Total').innerText = new_order.subTotal;
         document.getElementById('imagesum').src = new_order[base].urlOfImage;
-        console.log(new_order.urlOfImage)
 
         pop.style.display="block";
 
